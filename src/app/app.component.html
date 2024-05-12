@@ -1,0 +1,37 @@
+<style>
+    .custom-navigation {
+    background-color: #f8f9fa; /* Цвет фона */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ced4da; /* Граница */
+    border-radius: 5px; /* Скругленные углы */
+  }
+
+  .custom-navigation h3 {
+    color: #007bff; /* Цвет текста заголовка */
+    margin-bottom: 10px; /* Отступ снизу */
+  }
+
+  .custom-navigation a {
+    display: block;
+    padding: 5px;
+    color: #343a40; /* Цвет текста ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+  }
+
+  .custom-navigation a:hover {
+    background-color: #e9ecef; /* Цвет фона при наведении */
+  }
+</style>
+
+<div class="custom-navigation">
+  <h3>Навигационная панель</h3>
+  <div>
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Страница 1</a>
+    <a routerLink="/page2">Страница 2</a>
+    <a routerLink="/page3">Страница 3</a>
+    <a [routerLink]="['show-name', 'Шашков Никита']">Покажи своё имя</a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+

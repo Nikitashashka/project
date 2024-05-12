@@ -1,0 +1,79 @@
+<style>
+    form {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #c8ed4f;
+    border-radius: 5px;
+    background-color: #f3d2ec;
+    width: 300px;
+}
+
+label {
+    color: #0a99b9;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #c8f14d;
+    color: #075205;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.error-message {
+    color: rgb(239, 140, 140);
+    font-size: 12px;
+}
+
+h3 {
+    color: #f6172d;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+</style>
+
+
+
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="styled-form">
+    <div>
+        <label>Имя</label>
+        <input name="userName" formControlName="userName" class="form-control" />
+    </div>
+    <div *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched" class="error-message">
+        Не указано Имя!
+    </div>
+
+    <div>
+        <label>Фамилия</label>
+        <input name="userSurname" formControlName="userSurname" class="form-control" />
+    </div>
+    <div *ngIf="myForm.controls['userSurname'].invalid && myForm.controls['userSurname'].touched" class="error-message">
+        Не указана Фамилия!
+    </div>
+
+    <button type="submit" [disabled]="myForm.invalid">Отправить!</button>
+</form>
+
+<div class="styled-list">
+    <h3>Пользователи</h3>
+    <ul>
+        <li *ngFor="let user of users"> {{user.userSurname}} {{user.userName}}</li>
+    </ul>
+</div>

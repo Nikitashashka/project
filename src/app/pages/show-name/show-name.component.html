@@ -1,0 +1,22 @@
+<style>
+    p {
+        color: blue; /* Цвет текста */
+        font-size: 16px; /* Размер шрифта */
+    }
+
+    button {
+        background-color: #2cbee7; /* Зеленый цвет фона */
+        color: white; /* Белый цвет текста */
+        padding: 10px 20px; /* Отступы внутри кнопки */
+        border: none; /* Убираем границу кнопки */
+        border-radius: 5px; /* Закругляем углы кнопки */
+        cursor: pointer; /* Изменяем курсор при наведении */
+    }
+
+    button:hover {
+        background-color: #113338; /* Цвет кнопки при наведении */
+    }
+</style>
+<p>Введенное имя: {{name}}</p>
+
+<button (click)="goMain()">Вернуться на 1 страницу</button>
